@@ -1,14 +1,22 @@
 # 拾光笔记 · 个人技术博客
 
-一个用纯原生 HTML5 + CSS + JavaScript 实现的静态博客，无框架、无构建工具、无外部依赖。
+一个用纯原生 HTML5 + CSS + JavaScript 实现的静态博客，无框架、无构建工具、无外部依赖；另附三个排序算法示例程序。
 
 ## 运行
 
-直接双击 `index.html` 在浏览器打开即可；或使用任意静态服务器：
+博客直接双击 `index.html` 在浏览器打开即可；或使用任意静态服务器：
 
 ```bash
 python3 -m http.server 8000
 # 然后访问 http://localhost:8000
+```
+
+排序算法程序用 Node.js 运行：
+
+```bash
+node sorting/bubble-sort.js
+node sorting/quick-sort.js
+node sorting/merge-sort.js
 ```
 
 ## 文件结构
@@ -19,6 +27,7 @@ python3 -m http.server 8000
 | `style.css` | 响应式样式 + 深色模式 |
 | `posts.js` | 文章数据（在这里增删文章） |
 | `main.js` | 渲染、筛选、搜索、主题切换逻辑 |
+| `sorting/` | 三个排序算法程序（冒泡 / 快速 / 归并） |
 
 ## 功能
 
@@ -26,6 +35,16 @@ python3 -m http.server 8000
 - 文章详情阅读（单页切换，无后端）
 - 深色 / 浅色主题，记忆用户选择（localStorage）
 - 响应式布局，适配桌面 / 平板 / 手机
+
+## 排序算法
+
+`sorting/` 下每个文件是一个独立可运行的程序，自带多组样例自测：
+
+| 文件 | 算法 | 时间复杂度 |
+|------|------|-----------|
+| `bubble-sort.js` | 冒泡排序 | O(n²)，原地 |
+| `quick-sort.js` | 快速排序（三数取中） | O(n log n) 平均 |
+| `merge-sort.js` | 归并排序 | O(n log n)，稳定 |
 
 ## 添加文章
 

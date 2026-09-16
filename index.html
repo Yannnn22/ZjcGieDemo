@@ -6,6 +6,19 @@
   <meta name="description" content="一个用原生 HTML、CSS、JavaScript 构建的个人技术博客">
   <title>拾光笔记 · 个人技术博客</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // 在页面渲染前同步设置主题，避免深色模式首次加载闪烁（FOUC）
+    (function () {
+      var theme = null;
+      try {
+        theme = localStorage.getItem('blog-theme');
+      } catch (e) { /* 存储不可用时忽略 */ }
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">

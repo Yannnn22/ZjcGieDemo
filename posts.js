@@ -7,6 +7,8 @@
 //   tags     标签数组
 //   summary  一句话摘要
 //   content  正文，HTML 片段（支持 h2 / p / ul / code / pre / blockquote）
+// 注意：本文件是本地可信数据，content 会被以 HTML 形式渲染；若未来改为
+//       从接口/用户输入读取，必须先对 content 做白名单过滤或改用纯文本渲染。
 const POSTS = [
   {
     id: "static-blog",

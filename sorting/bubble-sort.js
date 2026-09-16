@@ -22,25 +22,4 @@ function bubbleSort(arr) {
   return a;
 }
 
-// ---------- 演示与自测 ----------
-function main() {
-  const samples = [
-    [5, 2, 8, 1, 9, 3],
-    [3, 3, 1, 2, 1],
-    [],
-    [42],
-    [9, 8, 7, 6, 5, 4, 3, 2, 1],
-  ];
-
-  let pass = true;
-  samples.forEach((s, i) => {
-    const got = bubbleSort(s);
-    const want = s.slice().sort((x, y) => x - y); // 用内置排序作为标准答案
-    const ok = JSON.stringify(got) === JSON.stringify(want);
-    pass = pass && ok;
-    console.log(`样例 ${i + 1}: [${s}] -> [${got}] ${ok ? '✅' : '❌'}`);
-  });
-  console.log(pass ? '\n全部通过 ✅' : '\n存在失败 ❌');
-}
-
-main();
+require('./test-util')(bubbleSort, '冒泡排序');
