@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一个用原生 HTML、CSS、JavaScript 构建的个人技术博客">
+  <title>拾光笔记 · 个人技术博客</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">拾光<span>·</span>笔记</h1>
+      <div class="search">
+        <input type="search" id="search-input" placeholder="搜索文章标题或摘要…" aria-label="搜索">
+      </div>
+      <button id="theme-toggle" class="theme-btn" aria-label="切换主题">🌙 深色</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 列表视图 -->
+    <section id="list-view">
+      <div id="tag-filter" class="tag-filter" aria-label="标签筛选"></div>
+      <div id="post-list" class="post-grid"></div>
+    </section>
+
+    <!-- 详情视图 -->
+    <article id="post-detail" class="post-detail hidden" aria-label="文章详情">
+      <button id="back-to-list" class="back-btn">← 返回列表</button>
+      <h1 id="detail-title"></h1>
+      <div class="detail-meta" id="detail-meta"></div>
+      <div class="card-tags" id="detail-tags"></div>
+      <div class="detail-content" id="detail-content"></div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 拾光笔记 · 用原生 HTML + CSS + JS 构建</p>
+  </footer>
+
+  <script src="posts.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
